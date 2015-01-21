@@ -1,6 +1,6 @@
 [user]
-  name = Ben Alman
-  email = EMAIL
+  name = Xaq Rothman
+  email = xaq@radcampaign.com
 [core]
   autocrlf = input
   whitespace = fix,space-before-tab,tab-in-indent,trailing-space
@@ -37,10 +37,22 @@
   added = yellow
   changed = green
   untracked = cyan
-[merge]
-  log = true
+[core]
+  FileMode = false
+  editor = vim
+  pager = less -r
+[credential]
+  helper = cache
 [difftool "Kaleidoscope"]
   cmd = ksdiff-wrapper git \"$LOCAL\" \"$REMOTE\"
+[interactive]
+  singlekey = true
+[merge]
+  log = true
+[pager]
+  status = true
+[push]
+  default = matching
 [rerere]
   enabled = 1
 [url "git@github.com:"]
