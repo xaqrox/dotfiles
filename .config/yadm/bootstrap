@@ -1,0 +1,22 @@
+#!/bin/bash
+set -e
+
+# Homebrew
+if ! command -v brew &>/dev/null; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+brew bundle --file="$HOME/.Brewfile" --no-upgrade
+
+# Oh My Zsh
+if [[ ! -d "$HOME/.oh-my-zsh" ]]; then
+  sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+fi
+
+# External plugin repos
+clone_if_missing() {
+  [[ ! -d "$1" ]] && git clone "$2" "$1"
+}
+clone_if_missing "$HOME/.config/zsh/custom/plugins/adhbeep" "git@github.com:xaqrox/adhbeep.git"
+clone_if_missing "$HOME/.config/zsh/custom/plugins/zhooks" "https://github.com/nicowillis/zhooks.git"

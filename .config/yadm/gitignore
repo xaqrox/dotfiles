@@ -1,0 +1,34 @@
+# Shell history and sessions
+.zsh_history
+.bash_history
+.zsh_sessions/
+.zcompdump*
+.viminfo
+
+# SSH keys (config is tracked, keys are not)
+.ssh/id_*
+.ssh/known_hosts
+.ssh/known_hosts.old
+
+# Claude Code — ignore everything, then un-ignore what we want
+.claude/
+!.claude/settings.json
+!.claude/CLAUDE.md
+!.claude/memory/
+
+# gh — ignore hosts.yml (has OAuth tokens), keep config
+.config/gh/hosts.yml
+
+# tfenv — ignore installed binaries, keep pinned version file
+.config/tfenv/versions/
+
+# thefuck — ignore Python cache
+.config/thefuck/__pycache__/
+
+# Zed — ignore database files
+.config/zed/prompts/
+
+# Sensitive app configs (contain tokens)
+.config/github-copilot/
+.config/acli/
+.config/jiratui/

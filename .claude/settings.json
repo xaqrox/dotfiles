@@ -1,0 +1,31 @@
+{
+  "hooks": {
+    "PermissionRequest": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "t=$(jq -r .tool_name); [ \"$t\" = AskUserQuestion ] && afplay -v 2 /System/Library/Sounds/Funk.aiff || afplay -v 2 /System/Library/Sounds/Hero.aiff; true"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay -v 2 /System/Library/Sounds/Blow.aiff 2>/dev/null || true"
+          }
+        ]
+      }
+    ]
+  },
+  "theme": "light",
+  "skipAutoPermissionPrompt": true,
+  "voiceEnabled": true,
+  "voice": {
+    "enabled": true,
+    "mode": "hold"
+  }
+}

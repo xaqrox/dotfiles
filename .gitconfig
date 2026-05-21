@@ -1,0 +1,39 @@
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[user]
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtiRQvraW/WlVGI7NT5M5xQKR+EbfHBKTndeyLmXl/u
+	name = Xaq Rothman
+	email = xaq@mightyacorn.com
+[interactive]
+	singlekey = true
+[push]
+	autoSetupRemote = true
+[core]
+    pager = delta
+	excludesfile = ~/.gitignore_global
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+
+    # delta detects terminal colors automatically; set one of these to disable auto-detection
+    # dark = true
+    # light = true
+
+[merge]
+    conflictStyle = zdiff3
+	tool = vimdiff
+
+# set pretty.medium to omit full commit message from default
+[pretty]
+    medium = %h %s
+[pull]
+	rebase = false
+[rerere]
+	enabled = true
